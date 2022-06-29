@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import { Logo } from "../components/Logo";
 import imgUrl from '../../src/assets/code-mockup.png'
 import { useCreateSubscriberMutation } from "../graphql/generated";
+import { Footer } from "../components/Footer";
 
 export function Subscribe() {
   const navigate = useNavigate()
@@ -27,10 +28,10 @@ export function Subscribe() {
 
   return (
    <div className="min-h-screen bg-blur bg-cover bg-no-repeat flex flex-col items-center">
-      <div className="w-full max-w-[1100px] flex items-center justify-between mt-20 mx-auto">
+      <div className="w-4/5 flex gap-12 flex-col items-center lg:w-full lg:max-w-[68.75rem] lg:flex-row lg:justify-between mt-20 mx-auto lg:mt-10">
         <div className="max-w-[640px]">
-          <Logo />
-          <h1 className="mt-8 text-[2.5rem] leading-tight">
+          <Logo /> 
+          <h1 className="mt-8 text-4xl text-[2.5rem] leading-tight">
             Construa uma <strong className="text-blue-500">aplicação completa</strong>, do zero, com <strong className="text-blue-500">React</strong> 
           </h1>
           <p className="mt-4 text-gray-200 leadinf-relaxed">
@@ -38,7 +39,7 @@ export function Subscribe() {
           </p>
         </div>
 
-        <div className="p-8 bg-gray-700 border border-gray-500 rounded">
+        <div className="p-8 bg-gray-700 border border-gray-500 rounded w-full lg:w-[32%]">
           <strong className="text-2xl mb-6 block">Inscreva-se gratuitamente</strong>
 
           <form onSubmit={handleSubscribe} className="flex flex-col gap-2 w-full">
@@ -67,6 +68,10 @@ export function Subscribe() {
       </div>
 
       <img src={imgUrl} className="mt-10" alt="" />
+
+      <Footer />
    </div>
+
+  
   )
 }
